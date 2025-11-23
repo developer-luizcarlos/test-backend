@@ -1,5 +1,5 @@
 import express from "express";
-import { getCountry } from "./helpers/getCountry.ts";
+import { getCountry } from "./helpers/getCountry.js";
 
 process.loadEnvFile();
 
