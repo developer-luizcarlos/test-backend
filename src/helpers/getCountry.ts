@@ -1,7 +1,10 @@
 import { readFile } from "fs/promises";
+import { pathToFileURL } from "url";
 
 export const getCountry = async (country?: string) => {
-  const fileContent = await readFile("assets/data.json", "utf-8");
+  const url = pathToFileURL("assets/data.json");
+
+  const fileContent = await readFile(url, "utf-8");
   const data = JSON.parse(fileContent);
 
   if (country) {

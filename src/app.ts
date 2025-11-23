@@ -2,8 +2,6 @@ import express from "express";
 import { getCountry } from "./helpers/getCountry.js";
 
 const app = express();
-const hostname = process.env.HOSTNAME!;
-const port = Number(process.env.PORT);
 
 app.get("/", (req, res) => {
   res.send("ok");
