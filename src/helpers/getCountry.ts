@@ -1,10 +1,16 @@
 import { readFile } from "fs/promises";
-import { pathToFileURL } from "url";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const getCountry = async (country?: string) => {
-  const url = pathToFileURL("assets/data.json");
+  const filePath = join(__dirname, "../..", "assets", "data.json");
 
-  const fileContent = await readFile(url, "utf-8");
+  console.log(__filename);
+
+  const fileContent = await readFile(filePath, "utf-8");
   const data = JSON.parse(fileContent);
 
   if (country) {
@@ -13,3 +19,5 @@ export const getCountry = async (country?: string) => {
     return data;
   }
 };
+
+getCountry().then(console.log);
