@@ -5,7 +5,6 @@ export const getCountry = async (country?: string) => {
   const data = JSON.parse(fileContent);
 
   if (country) {
-    // const hasCountryInData = Object.hasOwn(data, country);
     return data[country];
   } else {
     return data;

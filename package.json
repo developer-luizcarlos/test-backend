@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "license": "ISC",
-  "main": "index.js",
+  "main": "src/app.ts",
   "name": "using-ts",
   "scripts": {
     "start": "npx tsx --watch ./src/app.ts",

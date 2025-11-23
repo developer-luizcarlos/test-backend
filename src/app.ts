@@ -42,8 +42,4 @@ app.get("/countries/:country/capital", async (req, res) => {
   res.send(country.capital);
 });
 
-app.listen(port, hostname, () => {
-  console.log(`http://${hostname}:${port}`);
-});
-
 export default app;
